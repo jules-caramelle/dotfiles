@@ -1,0 +1,51 @@
+# ===================
+# iut by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+if [[ -f "/home/public/admin/bashrc" ]]; then
+    test -e /home/public/admin/bashrc && . /home/public/admin/bashrc
+    alias sql='psql -h psqlserv -U julescaramelleetu but2'
+    export PGPASSWORD="moi"
+    export PATH="$PATH:/home/infoetu/jules.caramelle.etu/.local/share/gem/ruby/3.1.0/bin"
+    [[ $- == *i* ]] || return
+    #path(s)
+    export PATH="$HOME/opt/nvim/bin:$HOME/opt/fastfetch/bin:$HOME/opt/htop/bin:$PATH"
+    function balatro(){
+        echo "Lancement de Balatro :)"
+        /home/infoetu/enzo.leclercq4.etu/Bureau/bal/love.AppImage /home/infoetu/enzo.leclercq4.etu/Bureau/bal/Balatro.love
+    }
+    #Prompt compatible avec log IUT
+    git_prompt_info() {
+    git rev-parse --is-inside-work-tree &>/dev/null || return
+    local ref
+    ref=$(git symbolic-ref --quiet --short HEAD 2>/dev/null) \
+        || ref=$(git describe --tags --exact-match 2>/dev/null) \
+        || ref=$(git rev-parse --short HEAD 2>/dev/null) || return
+    local dirty=''
+    [ -n "$(git status --porcelain 2>/dev/null)" ] && dirty='*'
+    printf '\001\e[33m\002 git:(%s%s)\001\e[0m\002' "$ref" "$dirty"
+    }
+
+    set_prompt() {
+        local EXIT_CHAR="$"
+        [ "$UID" -eq 0 ] && EXIT_CHAR="#"
+        local IDENTITY="\[\033[01;36m\]\u\[\033[00m\]"
+        if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+            IDENTITY="\[\033[01;36m\]\u\[\033[01;31m\]@\h\[\033[00m\]"
+        fi
+        PS1="[\t] ${IDENTITY}:\[\033[01;32m\]\W\[\033[00m\]\$(git_prompt_info) ${EXIT_CHAR} "
+    }
+
+    _log_to_everywhere() {
+        local RET=$?
+        local USER_NAME=$(whoami)
+        local LAST_CMD=$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//")
+
+        # Log de l'admin (obligatoire)
+        history -a
+        echo "$$ ${USER_NAME} $(history 1)" >> ~/.bash_eternal_history
+        logger -p user.info -t "bash_history" "${USER_NAME} [$$]: ${LAST_CMD} [exit: ${RET}]"
+
+        set_prompt
+    }
+fi

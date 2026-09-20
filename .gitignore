@@ -1,0 +1,9 @@
+# Fichier système macos et linux
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+
+# Fichiers des supports externes sur macos
+.Spotlight-V100
+.Trashes

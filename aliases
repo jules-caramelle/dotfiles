@@ -1,0 +1,6 @@
+# ===================
+# aliases by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+#Ajout de la commande wol pour allumer mon pc en local
+alias wol="wakeonlan 34:5A:60:3F:6E:1E"

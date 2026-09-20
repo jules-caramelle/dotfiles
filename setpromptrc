@@ -1,0 +1,73 @@
+# ===================
+# setpromptrc by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+# Fonction Git commune (silencieuse s'il n'y a pas de dépôt)
+git_prompt_info() {
+    command git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
+    
+    local ref
+    ref=$(command git symbolic-ref --quiet --short HEAD 2>/dev/null) || \
+    ref=$(command git describe --tags --exact-match 2>/dev/null) || \
+    ref=$(command git rev-parse --short HEAD 2>/dev/null) || return
+    
+    local dirty=''
+    [[ -n "$(command git status --porcelain 2>/dev/null)" ]] && dirty='*'
+    
+    printf " git:(%s%s)" "$ref" "$dirty"
+}
+
+if [ -n "$ZSH_VERSION" ]; then
+    # ==========================================
+    # CONFIGURATION ZSH
+    # ==========================================
+    setopt prompt_subst
+
+    zsh_git_prompt() {
+        local info
+        info=$(git_prompt_info)
+        [[ -n "$info" ]] && print -r -- "%F{yellow}${info}%f"
+    }
+
+    local IDENTITY='%F{cyan}%n%f'
+    if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+        IDENTITY='%F{cyan}%n%f%F{red}@%m%f'
+    fi
+
+    PROMPT='[%*] '${IDENTITY}':%F{green}%c%f$(zsh_git_prompt) %(!.#.$) '
+
+elif [ -n "$BASH_VERSION" ]; then
+    # ==========================================
+    # CONFIGURATION BASH
+    # ==========================================
+    
+    set_bash_prompt() {
+        local IDENTITY='\[\e[36m\]\u\[\e[0m\]'
+        if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+            IDENTITY='\[\e[36m\]\u\[\e[0m\]\[\e[31m\]@\h\[\e[0m\]'
+        fi
+
+        local CHROOT='${debian_chroot:+($debian_chroot)}'
+        local TIME='\[\e[0m\][\t]'
+        local DIR='\[\e[32m\]\W\[\e[0m\]'
+        local CHAR='\$ '
+
+        local GIT_INFO
+        GIT_INFO=$(git_prompt_info)
+        local GIT_STR=""
+        if [[ -n "$GIT_INFO" ]]; then
+            GIT_STR="\[\e[33m\]${GIT_INFO}\[\e[0m\]"
+        fi
+
+        PS1="${CHROOT}${TIME} ${IDENTITY}:${DIR}${GIT_STR} ${CHAR}"
+
+        # Gestion du titre de la fenêtre du terminal
+        case "$TERM" in
+            xterm*|rxvt*)
+                PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+                ;;
+        esac
+    }
+
+    PROMPT_COMMAND=set_bash_prompt
+fi

@@ -1,0 +1,13 @@
+# ===================
+# osx by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias unlock='xattr -d com.apple.quarantine'
+    #Homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+    export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+    #Intégration iterm2
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi

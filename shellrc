@@ -1,0 +1,23 @@
+# ===================
+# shellrc by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+export CLICOLOR=1
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+#Initialisation des utilitaire ijava
+[[ -f "${HOME}/dotfiles/ijava" ]] && source "${HOME}/dotfiles/ijava"
+#Initialisation des utilitaire IUT
+[[ -f "${HOME}/dotfiles/iut" ]] && source "${HOME}/dotfiles/iut"
+#Initialisation des alias
+[[ -f "${HOME}/dotfiles/aliases" ]] && source "${HOME}/dotfiles/aliases"
+#Initialisation des fonctions
+[[ -f "${HOME}/dotfiles/functions" ]] && source "${HOME}/dotfiles/functions"
+#Initialisation pour odrinateur Apple
+[[ -f "${HOME}/dotfiles/osx" ]] && source "${HOME}/dotfiles/osx"
+
+#Empécher de détruire un fichier avec une redirection de sortie standard
+set -o noclobber
+
+export PATH="$PATH:$HOME/bin"

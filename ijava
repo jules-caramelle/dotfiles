@@ -1,0 +1,19 @@
+# ===================
+# ijava by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+if [[ -d "${HOME}/ijava2" ]]; then
+
+    alias ijava="java -cp $HOME/ijava2/ijava.jar:. ijava2.clitools.MainCLI"
+
+    function ijava-update () {
+        if ping -q -c 1 -t 1 iutinfo.fr >/dev/null 2>&1;
+        then
+            mkdir -p $HOME/ijava2 ; curl -sLo ~/ijava2/ijava.jar https://ijava.iutinfo.fr/ijava.jar
+        fi
+    }
+    function cc () { ijava compile "$1.java" && ijava execute "$1"; }
+    function ct () { ijava compile "$1.java" && ijava test "$1"; }
+
+    
+fi
