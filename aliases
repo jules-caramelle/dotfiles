@@ -4,4 +4,4 @@
 
 #Ajout de la commande wol pour allumer mon pc en local
 alias wol="wakeonlan 34:5A:60:3F:6E:1E"
-alias doc-update="curl -L -o ~/bin/doc https://github.com/julescraft02/adoc-template/releases/latest/download/doc > /dev/null 2>&1 && echo done"
+alias doc-update="mkdir -p ~/bin && curl -L -o ~/bin/doc https://github.com/julescraft02/adoc-template/releases/latest/download/doc > /dev/null 2>&1 && chmod +x ~/bin/doc && echo done"
