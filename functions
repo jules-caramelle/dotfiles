@@ -23,3 +23,23 @@ else
     ssh jules.caramelle.etu@$HOST
 fi 
 }
+
+function git-set-github() {
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        git config --local user.name "jules-caramelle"
+        git config --local user.email "julescaramelle@proton.me"
+    else
+        echo "Erreur : vous n'êtes pas dans un projet Git."
+        return 1
+    fi
+}
+
+function git-set-univ() {
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        git config --local user.name "jules.caramelle.etu"
+        git config --local user.email "jules.caramelle.etu@univ-lille.fr"
+    else
+        echo "Erreur : vous n'êtes pas dans un projet Git."
+        return 1
+    fi
+}
