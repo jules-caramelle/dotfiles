@@ -1,3 +1,25 @@
 # ===================
 # functions by Jules CARAMELLE (julescaramelle@proton.me)
 # ===================
+
+function iut-ssh () {
+    if test -z $1
+then
+    ssh jules.caramelle.etu@tp.iutinfo.fr
+else
+    if test "$1" = "tp.iutinfo.fr"
+    then
+    HOST="tp.iutinfo.fr"
+    else
+    HOST="${1}.iut-infobio.priv.univ-lille1.fr"
+    fi
+    if ping -c 1 $HOST >/dev/null 2>/dev/null
+    then
+        echo "Connecting to $HOST"
+    else
+        echo "iut-ssh: Can't resolve \"${HOST}\", is the VPN on ?"
+        exit 1
+    fi
+    ssh jules.caramelle.etu@$HOST
+fi 
+}
