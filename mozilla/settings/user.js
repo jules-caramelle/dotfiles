@@ -69,3 +69,10 @@ user_pref("browser.shell.checkDefaultBrowser", false);
 
 //Pas de UITour
 user_pref("UITour", false);
+
+// ctrl + tab cyclique au + récent
+user_pref("browser.ctrlTab.recentlyUsedOrder", true);
+
+// Tabs verticales
+user_pref("sidebar.revamp", true);
+user_pref("sidebar.verticalTabs", true);
