@@ -2,6 +2,13 @@
 user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.fingerprintingProtection", true);
 user_pref("dom.security.https_only_mode", true);
+user_pref("signon.rememberSignons", false);
+user_pref("signon.autofillForms", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
+user_pref("browser.formfill.enable", false);
+user_pref("privacy.globalprivacycontrol.enabled", true);
+user_pref("privacy.donottrackheader.enabled", true);
 
 // Barre de recherche sugestions
 user_pref("browser.urlbar.suggest.searches", false);
