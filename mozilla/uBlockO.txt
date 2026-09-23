@@ -1,0 +1,40 @@
+{
+  "timeStamp": 1790174315515,
+  "version": "1.75.0",
+  "userSettings": {
+    "importedLists": []
+  },
+  "selectedFilterLists": [
+    "user-filters",
+    "ublock-filters",
+    "ublock-badware",
+    "ublock-privacy",
+    "ublock-quick-fixes",
+    "ublock-unbreak",
+    "easylist",
+    "easyprivacy",
+    "adguard-spyware-url",
+    "urlhaus-1",
+    "curben-phishing",
+    "plowe-0",
+    "fanboy-ai-suggestions",
+    "easylist-chat",
+    "easylist-newsletters",
+    "easylist-notifications",
+    "easylist-annoyances",
+    "ublock-annoyances"
+  ],
+  "hiddenSettings": {},
+  "whitelist": [
+    "app.formula1dashboard.com",
+    "auth.ticketmaster.com",
+    "chrome-extension-scheme",
+    "moz-extension-scheme",
+    "s.pathe.fr",
+    "www.leclercdrive.fr"
+  ],
+  "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop",
+  "urlFilteringString": "",
+  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true",
+  "userFilters": ""
+}
