@@ -62,7 +62,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.mozilla/firefox" ]]; then
-        for dir in "${HOME}/.mozilla/firefox"*"/"*".default-release"*; do
+        for dir in "${HOME}/.mozilla/firefox/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -70,7 +70,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.mozilla/firefox-esr" ]]; then
-        for dir in "${HOME}/.mozilla/firefox-esr/"*".default-release"*; do
+        for dir in "${HOME}/.mozilla/firefox-esr/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -78,7 +78,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.zen/firefox/" ]]; then
-        for dir in "${HOME}/.zen/firefox/"*".default-release"*; do
+        for dir in "${HOME}/.zen/firefox/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -86,7 +86,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.mozilla/zen/firefox/" ]]; then
-        for dir in "${HOME}/.mozilla/zen/firefox/"*".default-release"*; do
+        for dir in "${HOME}/.mozilla/zen/firefox/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -94,7 +94,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.var/app/org.mozilla.firefox/.mozilla/firefox/" ]]; then
-        for dir in "${HOME}/.var/app/org.mozilla.firefox/.mozilla/firefox/"*".default-release"*; do
+        for dir in "${HOME}/.var/app/org.mozilla.firefox/.mozilla/firefox/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -102,7 +102,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/snap/firefox/common/.mozilla/firefox/" ]]; then
-        for dir in "${HOME}/snap/firefox/common/.mozilla/firefox/"*".default-release"*; do
+        for dir in "${HOME}/snap/firefox/common/.mozilla/firefox/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -110,7 +110,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.var/app/io.github.zen_browser.zen/.zen/" ]]; then
-        for dir in "${HOME}/.var/app/io.github.zen_browser.zen/.zen/"*".default-release"*; do
+        for dir in "${HOME}/.var/app/io.github.zen_browser.zen/.zen/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
@@ -118,7 +118,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
     fi
 
     if [[ -d "${HOME}/.var/app/io.github.zen_browser.zen/.mozilla/" ]]; then
-        for dir in "${HOME}/.var/app/io.github.zen_browser.zen/.mozilla/"*".default-release"*; do
+        for dir in "${HOME}/.var/app/io.github.zen_browser.zen/.mozilla/"*".default-"*; do
             for file in "${SETTINGS_DIR}"*; do
                 [[ -f "${file}" ]] && cp -f "${file}" "${dir}/"
             done
