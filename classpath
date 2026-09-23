@@ -1,0 +1,9 @@
+# ===================
+# classpath by Jules CARAMELLE (julescaramelle@proton.me)
+# ===================
+
+if [[ -d ${HOME}/java-class ]]; then
+    for f in "${HOME}/java-class"/*.jar; do
+        export CLASSPATH="${f}:${CLASSPATH}"
+    done
+fi
