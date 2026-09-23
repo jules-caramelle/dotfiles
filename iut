@@ -7,7 +7,7 @@ if [[ -f "/home/public/admin/bashrc" ]]; then
     alias sql='psql -h psqlserv -U julescaramelleetu but2'
     export PGPASSWORD="moi"
     export PATH="$PATH:/home/infoetu/jules.caramelle.etu/.local/share/gem/ruby/3.1.0/bin"
-    umask 700
+    umask 0077
     [[ $- == *i* ]] || return
     #path(s)
     export PATH="$HOME/opt/nvim/bin:$HOME/opt/fastfetch/bin:$HOME/opt/htop/bin:$PATH"
