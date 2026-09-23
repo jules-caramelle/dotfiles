@@ -2,6 +2,10 @@
 # functions by Jules CARAMELLE (julescaramelle@proton.me)
 # ===================
 
+function mkd() {
+    mkdir -p "$@" && cd "$_";
+}
+
 function iut-ssh () {
     if test -z $1
 then
