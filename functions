@@ -22,7 +22,7 @@ else
         echo "Connecting to $HOST"
     else
         echo "iut-ssh: Can't resolve \"${HOST}\", is the VPN on ?"
-        exit 1
+        return 1
     fi
     ssh jules.caramelle.etu@$HOST
 fi 
