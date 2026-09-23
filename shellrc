@@ -16,6 +16,8 @@ alias grep='grep --color=auto'
 [[ -f "${HOME}/dotfiles/functions" ]] && source "${HOME}/dotfiles/functions"
 #Initialisation pour odrinateur Apple
 [[ -f "${HOME}/dotfiles/osx" ]] && source "${HOME}/dotfiles/osx"
+#Initialisation CLASSPATH
+[[ -f "${HOME}/dotfiles/classpath" ]] && source "${HOME}/dotfiles/classpath"
 
 #Empécher de détruire un fichier avec une redirection de sortie standard
 set -o noclobber
