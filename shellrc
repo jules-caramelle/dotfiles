@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 #Initialisation des fonctions
 [[ -f "${HOME}/dotfiles/functions" ]] && source "${HOME}/dotfiles/functions"
 #Initialisation pour odrinateur Apple
-[[ -f "${HOME}/dotfiles/osx" ]] && source "${HOME}/dotfiles/osx"
+[[ -f "${HOME}/dotfiles/macOS" ]] && source "${HOME}/dotfiles/macOS"
 #Initialisation CLASSPATH
 [[ -f "${HOME}/dotfiles/classpath" ]] && source "${HOME}/dotfiles/classpath"
 
