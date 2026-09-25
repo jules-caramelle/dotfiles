@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # ===================
 # bashrc by Jules CARAMELLE (julescaramelle@proton.me)
 # ===================
