@@ -47,7 +47,7 @@ if [[ "$OSTYPE" == "darwin"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]] && [[ -d "${SETTINGS_DIR}" ]]; then
 
     if [[ "${IS_ROOT}" == "true" ]]; then
-        for firefox_dir in "/usr/lib/firefox" "/usr/lib64/firefox"; do
+        for firefox_dir in "/usr/lib/firefox"* "/usr/lib64/firefox"*; do
             if [[ -d "$firefox_dir" ]]; then
                 sudo mkdir -p "${firefox_dir}/distribution"
                 sudo cp -f "${POLICIES_DIR}policies.json" "${firefox_dir}/distribution/policies.json"
