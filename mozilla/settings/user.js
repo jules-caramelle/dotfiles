@@ -83,3 +83,6 @@ user_pref("browser.ctrlTab.recentlyUsedOrder", true);
 // Tabs verticales
 user_pref("sidebar.revamp", true);
 user_pref("sidebar.verticalTabs", true);
+
+//Non traduction popup
+user_pref("browser.translations.automaticallyPopup", false);
