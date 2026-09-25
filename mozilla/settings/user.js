@@ -75,7 +75,7 @@ user_pref("browser.ml.pageAssist.enabled", false);
 user_pref("browser.shell.checkDefaultBrowser", false);
 
 //Pas de UITour
-user_pref("UITour", false);
+user_pref("browser.uitour.enabled", false);
 
 // ctrl + tab cyclique au + récent
 user_pref("browser.ctrlTab.recentlyUsedOrder", true);
